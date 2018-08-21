@@ -1,6 +1,8 @@
 # @alifd/next-theme-loader
 A webpack loader for injecting scss variables of theme package to scss file.
 
+[![npm package](https://img.shields.io/npm/v/@alifd/next-theme-loader.svg?style=flat-square)](https://www.npmjs.org/package/@alifd/next-theme-loader)
+
 ## Install
 
 ```
