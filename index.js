@@ -7,7 +7,7 @@ module.exports = function(source) {
   const base = query.base;
 
   const themeVarsStr = theme ? `@import "~${theme}/variables.scss";\n` : '';
-  const baseVarsStr = theme ? `@import "~${base}/variables.scss";\n` : ''; 
+  const baseVarsStr = base ? `@import "~${base}/variables.scss";\n` : ''; 
 
   const modifyVars = query.modifyVars;
   let modifyVarsStr = '';

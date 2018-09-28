@@ -1,6 +1,6 @@
 {
   "name": "@alifd/next-theme-loader",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A webpack loader for injecting scss variables of theme package to scss file.",
   "keywords": [
     "fusion",
