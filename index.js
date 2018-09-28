@@ -4,7 +4,10 @@ module.exports = function(source) {
   const query = loaderUtils.getOptions ? loaderUtils.getOptions(this) : loaderUtils.parseQuery(this.query);
 
   const theme = query.theme;
+  const base = query.base;
+
   const themeVarsStr = theme ? `@import "~${theme}/variables.scss";\n` : '';
+  const baseVarsStr = theme ? `@import "~${base}/variables.scss";\n` : ''; 
 
   const modifyVars = query.modifyVars;
   let modifyVarsStr = '';
@@ -16,7 +19,7 @@ module.exports = function(source) {
     }
   }
 
-  return `${themeVarsStr}${modifyVarsStr}${source}`;
+  return `${themeVarsStr}${modifyVarsStr}${baseVarsStr}${source}`;
 };
 
 function convertObj2Scss(modifyVarsObj) {
