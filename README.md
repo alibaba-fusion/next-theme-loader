@@ -3,6 +3,8 @@ A webpack loader for injecting scss variables of theme package to scss file.
 
 [![npm package](https://img.shields.io/npm/v/@alifd/next-theme-loader.svg?style=flat-square)](https://www.npmjs.org/package/@alifd/next-theme-loader)
 
+
+
 ## Install
 
 ```
@@ -66,7 +68,9 @@ module.exports = {
           {
             loader: '@alifd/next-theme-loader',
             options: {
-              theme: '@alifd/theme-package'
+              theme: '@alifd/theme-package', /* variables only modified */
+              basic: '@alifd/next', /* all basic variables (optional) */
+              modifyVars: {'$css-prefix': 'my-'} /* custom variable (optional) */
             }
           }
         ]
