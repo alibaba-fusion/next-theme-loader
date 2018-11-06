@@ -69,7 +69,6 @@ module.exports = {
             loader: '@alifd/next-theme-loader',
             options: {
               theme: '@alifd/theme-package', /* variables only modified (optional)*/
-              basic: '@alifd/next', /* all basic variables (optional) */
               modifyVars: {'$css-prefix': 'my-'} /* custom variable (optional) */
             }
           }
@@ -142,7 +141,7 @@ module.exports = {
 ## Query
 
 * `theme`(String): theme package(eg: @alifd/theme-1) which come from https://fusion.design
-* `basic`(String): package with all variables (eg: [@alifd/next](https://www.npmjs.com/package/@alifd/next))
+* `base`(String): package with all variables (eg: [@alifd/next](https://www.npmjs.com/package/@alifd/next))
 * `modifyVars`(String/Object): inject some variables, such as: `$css-prefix` or `$icon-font-path`, value may be the following two types
   * `{ '$css-prefix': '"my-"' }`
   * `path.join(__dirname, 'variable.scss')`, it should be an absolute path
