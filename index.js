@@ -1,4 +1,5 @@
 const loaderUtils = require('loader-utils');
+const path = require('path');
 
 module.exports = function(source) {
   const query = loaderUtils.getOptions ? loaderUtils.getOptions(this) : loaderUtils.parseQuery(this.query);
@@ -6,8 +7,9 @@ module.exports = function(source) {
   const theme = query.theme;
   const base = query.base;
 
-  const themeVarsStr = theme ? `@import "~${theme}/variables.scss";\n` : '';
-  const baseVarsStr = base ? `@import "~${base}/variables.scss";\n` : ''; 
+  // resolve to node_modules of cwd
+  const themeVarsStr = theme ? `@import "${path.resolve(process.cwd(), 'node_modules', theme, 'variables.scss')}";\n` : '';
+  const baseVarsStr = base ? `@import "${path.resolve(process.cwd(), 'node_modules', base, 'variables.scss')}";\n` : '';
 
   const modifyVars = query.modifyVars;
   let modifyVarsStr = '';
