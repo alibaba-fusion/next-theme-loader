@@ -8,7 +8,7 @@ module.exports = function(source) {
   const base = query.base;
 
   // resolve to node_modules of cwd
-  const themeVarsStr = `@import "${path.resolve(process.cwd(), 'node_modules', theme, 'variables.scss')}";\n`
+  const themeVarsStr = theme ? `@import "${path.resolve(process.cwd(), 'node_modules', theme, 'variables.scss')}";\n` : '';
   const baseVarsStr = base ? `@import "${path.resolve(process.cwd(), 'node_modules', base, 'variables.scss')}";\n` : '';
 
   const modifyVars = query.modifyVars;
