@@ -7,7 +7,8 @@ module.exports = function(source) {
   const base = query.base;
 
   const themeVarsStr = theme ? `@import "~${theme}/variables.scss";\n` : '';
-  const baseVarsStr = base ? `@import "~${base}/variables.scss";\n` : ''; 
+  const themeIconStr = theme ? `$css-prefix: "next-" !default;\n@import "~${theme}/icons.scss";\n` : '';
+  const baseVarsStr = base ? `@import "~${base}/variables.scss";\n` : '';
 
   const modifyVars = query.modifyVars;
   let modifyVarsStr = '';
@@ -19,7 +20,7 @@ module.exports = function(source) {
     }
   }
 
-  return `${themeVarsStr}${modifyVarsStr}${baseVarsStr}${source}`;
+  return `${themeVarsStr}${themeIconStr}${modifyVarsStr}${baseVarsStr}${source}`;
 };
 
 function convertObj2Scss(modifyVarsObj) {
